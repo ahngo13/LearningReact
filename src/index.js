@@ -1,13 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, {createContext} from 'react';
+import {render} from 'react-dom';
+// import {colors as colors} from "./color-data.json"
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ColorProvider from './component/color-hooks';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+//새로운 컨텍스트 객체 생성
+// export const ColorContext = createContext();
+
+render(
+    <ColorProvider>
+      <App />
+    </ColorProvider>
+  ,
   document.getElementById('root')
 );
 
